@@ -1,0 +1,31 @@
+# TCS-NQT Maximum in the sub-arrays of length 'k'.
+
+list1 = []
+list2 = []
+list3 = []
+
+c1 = 0 
+c2 = 0
+
+N = int(input("Enter the length of the list:"))
+
+for i in range(0, N):
+    list1.append(int(input("Enter the element: ")))
+    
+k = int(input("Enter the value of k:"))
+
+if k == 1:
+    print(list1)
+elif k == N:
+    print(max(list1))
+else:
+    for i in range(0, len(list1)-k+1):
+        for j in range(0+c1, k+c2):
+            list2.append(list1[j])
+            
+        c1 += 1
+        c2 += 1
+        list3.append(max(list2))
+        list2 = []
+        
+print(list3)
